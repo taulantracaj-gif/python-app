@@ -48,5 +48,8 @@
           message: 'Your commit message'
           add: 'report.txt'
        
-   11.
+   11. Permission setup
+      1. Go to settings of repo 
+      2. Actions - > General
+      3. under workflow permissions -> Read and write permissions
     
