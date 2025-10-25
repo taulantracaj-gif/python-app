@@ -21,4 +21,14 @@
    1. THIS ${GITHUB_SHA::6} works only on bash since this is a modue which is not bash then
    2. lets try this ${{ github.sha }}
    3. ACTION should be trigged and in  https://hub.docker.com/repository/docker/tracaj/python-app/general we should see the new tag
-18. 
+18. To shorten the commint
+    1. go to stackoverflow -> https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action
+    2. get this
+      - name: Shorten Commit Id
+        shell: bash
+        run: |
+          echo "COMMIT_ID=${GITHUB_SHA::6}" >> "$GITHUB_ENV"
+  
+    3. past it in the job and change 
+         env.COMMIT_ID
+19. 
