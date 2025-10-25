@@ -21,4 +21,7 @@
       4. curl -k https://argocd-server.argocd  add the namespace
       5. this is the endpoint to use
    3. now make the jobs dependend from each other so first ci then cd 
-      1. 
+      1. go to google and write job dependency github actions -> https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs
+      2. use need -> https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#example-requiring-successful-dependent-jobs
+   4. add a task to install argocd
+      

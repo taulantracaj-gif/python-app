@@ -31,6 +31,13 @@ jobs:
     needs: ci
     runs-on: self-hosted
     steps:
+      - name: Install ARGO CD
+        shell: bash
+        run: |
+          curl -k -sSL -o argocd-linux-amd64 https://argocd-server.argocd/download/argocd-linux-amd64
+          chmod +x argocd-linux-amd64
+          mv ./argocd /usr/local/bin/argocd
+          argocd version
       - name: ARGOCD App sync
         shell: bash
         run: |
