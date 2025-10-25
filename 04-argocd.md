@@ -44,3 +44,5 @@ We are going to install argocd with helm into k8s
           8. go to argocd.test.com and put user and password
      4. 
 # github
+1. Push this files ON TO GH ACCOUNT
+2. go to develeoper settings -> PAT generate a pat classic
