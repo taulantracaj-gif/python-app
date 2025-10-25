@@ -37,7 +37,6 @@ jobs:
           curl -ksSL -o /tmp/argocd https://argocd-server.argocd/download/argocd-linux-amd64
           chmod +x /tmp/argocd
           sudo mv /tmp/argocd /usr/local/bin/argocd
-          argocd version
       - name: ARGOCD App sync
         shell: bash
         run: |
