@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: python-app
 spec:
+  ingressClassName: nginx
   rules:
   - host: "python-app.test.com"
     http:
@@ -13,4 +14,4 @@ spec:
             service:
               name: python-app
               port:
-                number: 8080
+                number: 80
