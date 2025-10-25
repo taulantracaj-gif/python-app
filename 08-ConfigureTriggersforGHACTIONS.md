@@ -15,4 +15,10 @@
 14. put as tag as unique identifier
    1. go to goolge search for github actions commit id -> https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action
    2. ${GITHUB_SHA::6}
-15. go back to terminal
+15. commit the changes
+16. it will fail with invalid reference format GITHUB_SHA::6
+17. TO FIX
+   1. THIS ${GITHUB_SHA::6} works only on bash since this is a modue which is not bash then
+   2. lets try this ${{ github.sha }}
+   3. ACTION should be trigged and in  https://hub.docker.com/repository/docker/tracaj/python-app/general we should see the new tag
+18. 
