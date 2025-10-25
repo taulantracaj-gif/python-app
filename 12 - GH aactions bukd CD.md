@@ -24,4 +24,29 @@
       1. go to google and write job dependency github actions -> https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs
       2. use need -> https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#example-requiring-successful-dependent-jobs
    4. add a task to install argocd
-      
+
+   # Pick the version
+   1. capture the tage
+   2. modify values and push
+   3. look for job outputs -> https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/pass-job-outputs
+   4. commit_id
+   5. install https://pypi.org/project/yq/
+   6. go to terminal 
+   7.  kubectl exec -ti self-hosted-runners-n2nn6-knfbd -n actions-runner-system -- sh 
+      1.check if it has python and pip
+   8. pip install yq
+   9. change values.yaml tag to 
+      yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
+   10. push to gh
+      1. go to google and search github push github actions -> https://stackoverflow.com/questions/57921401/push-to-origin-from-github-action
+      2. clone repo - uses: actions/checkout@v3
+      3.   - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Your Name
+          author_email: mail@example.com
+          message: 'Your commit message'
+          add: 'report.txt'
+       
+   11.
+    
