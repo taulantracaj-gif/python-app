@@ -56,4 +56,48 @@ Let's set it up and create some md (markdown) files where we will store our app'
                 - Getting started: 'docs/index.md'
     5. Go to catalog-info.yaml in the python-app repo and add this
         backstage.io/techdocs-ref: dir:.  - we want to use techdocs,plugins and pls go to current dir and check for docs -> docs is  default by backstage
-    6. sdasd
+
+### Install cand configure techdocs 
+    1. we do not ahve by default mkdocs in backstage and we have to make sure that we install mkdocs
+    2. Go to docu -> https://backstage.io/docs/features/techdocs/ -> getting started -> https://backstage.io/docs/features/techdocs/getting-started
+    3. Adding the frontend plugin first - if u use npx it might be that is present. lets check
+    4. lets check this file packages/app/src/App.tsx  , it should have smth like this
+
+            import {
+                TechDocsIndexPage,
+                techdocsPlugin,
+                TechDocsReaderPage,
+                } from '@backstage/plugin-techdocs';
+    6. then no need to add 
+    7. setting the configuration
+    8. we need this
+            techdocs:
+                builder: 'local'
+                publisher:
+                    type: 'local'
+                generator:
+                    runIn: local
+    9. the important thing about generatore is where the container for mkdocs will be installed
+    10. go to container appconfig.local.yaml
+        nano app-config.local.yaml
+    11. add the section from point 8
+    12. save it - what we did is we told that we want to run mkdocs localy from the container
+    13. we need to download mkdocs 
+    14. how to do it   -> https://backstage.io/docs/features/techdocs/getting-started#disabling-docker-in-docker-situation-optional
+        1. we need  to run this inside container
+            apt-get update && apt-get install -y python3 python3-pip python3-venv 
+        2. wait for some time to finish
+        3. verify
+            python3 
+        4. export VIRTUAL_ENV=/opt/venv
+        5. python3 -m venv $VIRTUAL_ENV
+        6. export PATH="$VIRTUAL_ENV/bin:$PATH"
+        7. pip3 install mkdocs-techdocs-core
+        8. this will run installation of mkdocs 
+        9. once done we can test
+        10. yarn start
+        11. we need to readd the component beacuse we do not have database
+    15. after start the server
+    16. readd the component 
+    17. go to component and click view techdocs
+
