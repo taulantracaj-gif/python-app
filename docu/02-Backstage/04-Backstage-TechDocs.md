@@ -101,3 +101,22 @@ Let's set it up and create some md (markdown) files where we will store our app'
     16. readd the component 
     17. go to component and click view techdocs
 
+## NOTE
+But if you want a permanent solution now, you can create a docker image from this dockerfile:
+
+FROM node:18-bookworm-slim
+ 
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+ 
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ 
+RUN pip3 install mkdocs-techdocs-core
+
+
+and use it the next time you want to start your backstage server!
+
+
+
+You could also refer to the video lecture where we fix this, which is in the Backstage Software Templates section, and the name of the lecture is: Final fixes to templates and TechDocs
