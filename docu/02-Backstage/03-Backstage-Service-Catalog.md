@@ -69,10 +69,40 @@ Backstage TechDocs for making it easy to create, maintain, find, and use technic
                 # Local example data, file locations are relative to the backend process, typically `packages/backend`
                 - type: file
                   target: /app/backstage/catalog/entities/groups.yaml
-    4. and one level above allow Groups     
-        - allow: [User, Groups, Component, System, API, Resource, Location]
+    4. and one level above allow Group     
+        - allow: [User, Group, Component, System, API, Resource, Location]
+    5. under type add rules and allow only users and groups
+            catalog:
+            rules:
+                - allow: [Component, System, API, Resource, Location]
+            locations:
+                # Local example data, file locations are relative to the backend process, typically `packages/backend`
+                - type: file
+                target: /app/backstage/catalog/entities/users.yaml
+                rules:
+                    - allow: [User]
+                # Local example data, file locations are relative to the backend process, typically `packages/backend`
+                - type: file
+                target: /app/backstage/catalog/entities/groups.yaml
+                rules:
+                    - allow: [Group]
 ## Register Existing component
     1. Go to terminal 
     2. exit from second terminal and go to python app
     3. push the catalog-info.yaml
+    4. stop the service backstage from terminal 1
+    5. start
+      yarn start
+    6. check it, now new menu item My Group should appear http://localhost:3000/catalog/default/Group/development
+    7. still under components there is no component check home directory
+    8. create
+      1. Go to Home 
+      2. click create
+      3. Reister existing component
+      4. url -> put  https://github.com/taulantracaj-gif/python-app/blob/main/catalog-info.yaml
+      5. click analyze
+      6. Import 
+      7. View COmponent -> it will redirect you to http://localhost:3000/catalog/default/component/python-app
+      8. click on Home and u can see one component
+      9. click on view source and will redirect to gh
 
