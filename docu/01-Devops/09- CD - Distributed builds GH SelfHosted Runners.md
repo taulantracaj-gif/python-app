@@ -11,14 +11,14 @@
 4. Create PAT on GH
    1. REPO selected
    2. only repo
-   3. generate token TOKEN
+   3. generate token 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
 5. Deploy Controller
    1. Choose helm way
       a.ADD REPO helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
       b. Run it
          helm upgrade --install --namespace actions-runner-system --create-namespace\
          --set=authSecret.create=true\
-         --set=authSecret.github_token="TOKEN"\
+         --set=authSecret.github_token="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"\
          --wait actions-runner-controller actions-runner-controller/actions-runner-controller
       c. check if correct
          kubectl get pods -n actions-runner-system
@@ -44,3 +44,7 @@
 7. Run using self hosted
    1. Go to the action and un runs-on put the  label self-hosted
    2. it will be running on any runenr which has self-hosted label
+8. WHEN Running there is an error  Error: Docker buildx is required. See https://github.com/docker/setup-buildx-action to set up buildx.
+      1. keep using ubuntu for building and pushing
+      2. for deploy use the self hosted
+   

@@ -12,7 +12,7 @@
    4.  kubectl get ing -n python
 7. go to google argocd cli deploy app ->  https://argo-cd.readthedocs.io/en/stable/getting_started/
 8. Login to argo with no certificate
-   argocd login argocd.test.com --insecure --grpc-web --username admin --password 
+   argocd login argocd.test.com --insecure --grpc-web --username admin --password XdkccEaVwXxMhO9A
 
 # SYNC ARGO CD APPS PROGRAMICALLY
    0.  argocd app -h

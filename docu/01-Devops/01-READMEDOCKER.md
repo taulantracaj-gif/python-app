@@ -35,7 +35,7 @@ code https://github.com/ricardoandre97/python-app
    2. personal access tocken
    3. give it a name python-app
    4. select read and write
-   5. save it 
+   5. save it dckr_pat_ojNvy0Uw9Dy-Isk4DFtQl033wFY 
    6. docker login -u tracaj
    7. docker images
    8. docker tag python-app:v1 tracaj/python-app:v1

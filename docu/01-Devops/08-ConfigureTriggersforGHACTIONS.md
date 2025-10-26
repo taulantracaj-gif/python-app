@@ -9,7 +9,7 @@
 8. set paths to be src/**
 9. set branch main
 10. leave only login and build push steps so 2 
-11. Docker USER NAME AND PASS tracaj 
+11. Docker USER NAME AND PASS tracaj dckr_pat_ojNvy0Uw9Dy-Isk4DFtQl033wFY
 12. GO TO GH REPO SETTINGS -> SECRETS -> ACTIONS -> REPOSITORY SECRETS
 13. in ci.yaml change tags tracaj/python-app
 14. put as tag as unique identifier

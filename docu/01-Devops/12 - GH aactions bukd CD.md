@@ -52,4 +52,4 @@
       1. Go to settings of repo 
       2. Actions - > General
       3. under workflow permissions -> Read and write permissions
-    
+   12.  check chart if changed the values
